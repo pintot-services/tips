@@ -1,0 +1,696 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Tips ( ko / en ) : Tesla V11.1</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-interactiveBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="4a4e63d3-f9a1-4876-921b-2600386b2cbf" class="page sans"><header><h1 class="page-title">Tips ( ko / en ) : Tesla V11.1</h1><p class="page-description"></p></header><div class="page-body"><p id="868d5bb0-20c6-4019-94f7-1f638438f575" class="">
+</p><h1 id="1caba08f-ae87-45eb-8d34-b82234b7a973" class="">[한국어]</h1><h1 id="28eb0edf-e7d6-43c1-bf04-1e0e224ccc68" class="">0x0. 기본 인터페이스</h1><ul id="0b189e55-64bf-4c67-9a46-ba31b5bfaa36" class="toggle"><li><details><summary>(펴보기) Pintot 동작 확인은 하셨나요? 제대로 불은 들어왔는지, self-test 링크 눌렀을 때 동작하는지 확인이 필요합니다.</summary><figure id="138a7088-4284-4ec4-a581-b30c77768f92" class="image"><a href="Tips%20(%20ko%20en%20)%20Tesla%20V11%201%204a4e63d3f9a14876921b2600386b2cbf/Untitled.png"><img style="width:407px" src="Tips%20(%20ko%20en%20)%20Tesla%20V11%201%204a4e63d3f9a14876921b2600386b2cbf/Untitled.png"/></a></figure></details></li></ul><ul id="fbe67300-d8f3-4f96-9c74-4844ede4737a" class="bulleted-list"><li style="list-style-type:disc">테슬라 차량 브라우저에서 3.3.3.3:4567 로 접속하면 자동으로 3.3.3.3:4567/client.html 로 redirect 됩니다.</li></ul><ul id="8c721fff-98b9-4cb9-8b53-26cf2a8ddd34" class="bulleted-list"><li style="list-style-type:disc">기본 인터페이스 버튼은 각각 아래와 같습니다.</li></ul><div id="bc4be7e3-0d2e-44de-ae7a-86e5d2d4dcaa" class="column-list"><div id="2cf5eb2a-b1c2-49c5-9490-5d92101a291c" style="width:12.5%" class="column"><figure id="dd711169-ac0e-4336-81db-4b39ca51a9aa" class="image"><a href="Tips%20(%20ko%20en%20)%20Tesla%20V11%201%204a4e63d3f9a14876921b2600386b2cbf/Untitled%201.png"><img style="width:105px" src="Tips%20(%20ko%20en%20)%20Tesla%20V11%201%204a4e63d3f9a14876921b2600386b2cbf/Untitled%201.png"/></a></figure></div><div id="7d67d6ac-6535-4fe6-b041-4742533cda16" style="width:87.5%" class="column"><p id="c04efd18-d13f-4ac1-a63b-ac9abe47cdd9" class="">
+<strong>새로고침
+</strong>브라우저에 미러링 화면이 출력되지 않으면 이 버튼으로 화면을 갱신하세요.</p></div></div><div id="fbe435e5-b23f-4fc1-af97-740cde0a2d01" class="column-list"><div id="33e0bf20-ea37-40e2-a1bb-a62bc9e01eb7" style="width:12.5%" class="column"><figure id="258dc6f9-98a1-4e22-b9a3-5f44f2798e79" class="image"><a href="Tips%20(%20ko%20en%20)%20Tesla%20V11%201%204a4e63d3f9a14876921b2600386b2cbf/Untitled%202.png"><img style="width:103px" src="Tips%20(%20ko%20en%20)%20Tesla%20V11%201%204a4e63d3f9a14876921b2600386b2cbf/Untitled%202.png"/></a></figure></div><div id="3428e772-17c2-4144-aa22-d162ddfd67d2" style="width:87.5%" class="column"><p id="80902aad-4c25-43e4-bacd-43bdf3889ddc" class="">
+<strong>화면 확대/축소</strong>
+미러링 화면을 표시할 수 있는 제일 큰 화면으로 확대 혹은 되돌립니다. </p></div></div><div id="6ef84e2b-ca7c-4b35-b0df-885817900ca3" class="column-list"><div id="81bb55a7-78ba-42da-931c-010f0fde1917" style="width:12.5%" class="column"><figure id="888a5d68-c788-48b4-9de9-542a6bcd6916" class="image"><a href="Tips%20(%20ko%20en%20)%20Tesla%20V11%201%204a4e63d3f9a14876921b2600386b2cbf/Untitled%203.png"><img style="width:103px" src="Tips%20(%20ko%20en%20)%20Tesla%20V11%201%204a4e63d3f9a14876921b2600386b2cbf/Untitled%203.png"/></a></figure></div><div id="28189276-a4ff-44e8-8209-c9500a67ab1a" style="width:87.5%" class="column"><p id="8a44589f-611b-4487-aea2-89bf1291f648" class="">
+<strong>홈 버튼( 미러링 폰 )</strong></p><p id="fdd10c14-11f1-40f9-9b8f-068e7a3552f1" class="">미러링 폰의 홈 버튼 누릅니다.</p></div></div><div id="73b08eaa-d6f1-46b7-b8b4-ec238261df9e" class="column-list"><div id="c340e4ec-e0cf-4e47-ba92-2f3cdc7e3997" style="width:12.5%" class="column"><figure id="61b53aa1-874e-45d7-ba29-a8dfa6d6126c" class="image"><a href="Tips%20(%20ko%20en%20)%20Tesla%20V11%201%204a4e63d3f9a14876921b2600386b2cbf/Untitled%204.png"><img style="width:103px" src="Tips%20(%20ko%20en%20)%20Tesla%20V11%201%204a4e63d3f9a14876921b2600386b2cbf/Untitled%204.png"/></a></figure></div><div id="40833c44-491f-48cd-b45a-cd35952722b9" style="width:87.5%" class="column"><p id="ebb65302-17c3-4f3a-ad24-579020e04e5e" class="">
+<strong>백 버튼( 미러링 폰 )</strong>
+미러링 폰의 백 버튼을 누릅니다.</p></div></div><div id="a9d36ef9-3b03-49dd-b812-a2d78448551d" class="column-list"><div id="f9885881-7cd8-471d-904b-82350616ce32" style="width:12.5%" class="column"><figure id="50c15cc1-445d-4d54-ac14-7831f4af4ba9" class="image"><a href="Tips%20(%20ko%20en%20)%20Tesla%20V11%201%204a4e63d3f9a14876921b2600386b2cbf/Untitled%205.png"><img style="width:106px" src="Tips%20(%20ko%20en%20)%20Tesla%20V11%201%204a4e63d3f9a14876921b2600386b2cbf/Untitled%205.png"/></a></figure></div><div id="e5c4aa2e-4eb5-4ccb-87ed-b369b00b86fa" style="width:87.5%" class="column"><p id="013f1bba-384b-492a-80da-9d85c9141683" class="">
+<strong>영화관 모드 ( 주차 중에만 )</strong></p><p id="30a8b192-f75c-491e-be56-35a5641172b1" class="">여러 OTT의 풀스크린으로 바로 이동할 수 있는 help 페이지로 이동합니다. 완전히 끄기 전까지는 계속 풀스크린 상태에서 OTT 관람이 가능합니다.</p></div></div><h1 id="a8c74013-d024-4401-aeae-09fb59c13f50" class="">0x1. 동작이 제대로 안될 때</h1><ul id="5c0feb44-bb37-47cd-9db4-dcec48c12aa5" class="bulleted-list"><li style="list-style-type:disc">제대로 화면 출력 안될 때는 무조건 앱 삭제 후 재설치 하시는 것이 편합니다.</li></ul><h1 id="d3355c58-08d9-47f8-b04b-71a9ee99e376" class="">0x2. 화면 전송이 느릴 때</h1><ul id="b7d6aba4-f2fc-4ba2-8ba9-8c789540b499" class="bulleted-list"><li style="list-style-type:disc">브라우저쪽이 계속 켜져 있으면 성능이 떨어질 수 있습니다. 두 버튼 꾹 눌러서 touch screen을 재시작 하면 많은 도움이 됩니다.</li></ul><figure id="2478551d-3d87-49ef-b682-931222bce001" class="image"><a href="Tips%20(%20ko%20en%20)%20Tesla%20V11%201%204a4e63d3f9a14876921b2600386b2cbf/Untitled%206.png"><img style="width:432px" src="Tips%20(%20ko%20en%20)%20Tesla%20V11%201%204a4e63d3f9a14876921b2600386b2cbf/Untitled%206.png"/></a></figure><p id="6a547433-3132-49be-a119-95bd8b4434a2" class="">
+</p><ul id="7c11670a-4c63-4120-b37b-c8fff5029701" class="bulleted-list"><li style="list-style-type:disc">Pintot이 WiFi 위에서 미러링 동작을 진행할 때 차량 데이터가 Tesla 쪽으로 전송되면 속도가 심하게 느려질 수 있습니다. <ul id="5df11807-415b-4b3f-acec-c79066944676" class="bulleted-list"><li style="list-style-type:circle">특히 가만히 있을 때보다 주행 할 때 더 느려지는 경향이 경험적으로 많이 나타납니다.</li></ul><blockquote id="b2fa5e80-5675-43bd-a3c6-aa1768e091b1" class="">적극적으로 권장드릴 내용은 아지만 재시작 후에도 미러링 속도가 계속 느릴 경우에
+<strong>차량 메뉴의 소프트웨어 항목→ 제일 하단의 개인 정보 보호 탭 / 데이터 공유 항목 </strong>내부에서 데이터 전송 관련 메뉴를 꺼보시기 바랍니다.</blockquote></li></ul><hr id="10fdbfda-84d1-4475-b305-136d11901bdc"/><h1 id="f88b56bc-0d0d-4c79-9d3d-2cc74426c251" class="">[English]</h1><h1 id="f5a2881e-1371-4393-8e67-1b1f45fa7784" class="">0x0. Basic Interface</h1><ul id="e0c7ea9c-6a09-4c68-be28-3262df3c2aef" class="toggle"><li><details><summary>(Expand) Have you checked the Pintot operation? Make sure the light is on and self-test button is working properly.</summary><figure id="43dde3aa-29e2-4a5d-8821-b1aa54551d13" class="image"><a href="Tips%20(%20ko%20en%20)%20Tesla%20V11%201%204a4e63d3f9a14876921b2600386b2cbf/Untitled.png"><img src="Tips%20(%20ko%20en%20)%20Tesla%20V11%201%204a4e63d3f9a14876921b2600386b2cbf/Untitled.png"/></a></figure></details></li></ul><ul id="f96ffbbe-5c50-41fd-8c00-9cd4ed787f9a" class="bulleted-list"><li style="list-style-type:disc">When you connect to 3.3.3.3:4567 from a Tesla vehicle browser, you will be automatically redirected to 3.3.3.3:4567/client.html.</li></ul><ul id="ca6a7f4f-2277-4561-a6da-3054ec450bf0" class="bulleted-list"><li style="list-style-type:disc">The basic interface buttons are as follows:</li></ul><div id="fe1d35ea-56a7-4d86-80a1-7e3a25e75b1d" class="column-list"><div id="934403d6-0bf1-415e-a6d6-ea033609b9bb" style="width:12.5%" class="column"><figure id="6495e515-b683-49b6-b92d-a6cc4b5c2293" class="image"><a href="Tips%20(%20ko%20en%20)%20Tesla%20V11%201%204a4e63d3f9a14876921b2600386b2cbf/Untitled%201.png"><img src="Tips%20(%20ko%20en%20)%20Tesla%20V11%201%204a4e63d3f9a14876921b2600386b2cbf/Untitled%201.png"/></a></figure></div><div id="3c5f6c25-d203-4303-a3e2-21fe3cdad96c" style="width:87.5%" class="column"><p id="84b1bb9f-4bcf-4e4d-a864-3fb0a9a199d6" class="">
+<strong>Refresh</strong>
+Use this button to refresh the screen if the mirroring screen is not displayed.</p></div></div><div id="cb272900-df16-45e4-9fae-82b46567d9b0" class="column-list"><div id="a3a83206-57cb-42ba-83f9-d5dd96cc0700" style="width:12.5%" class="column"><figure id="cc9921d3-027a-4f04-90c3-7267378c2dd4" class="image"><a href="Tips%20(%20ko%20en%20)%20Tesla%20V11%201%204a4e63d3f9a14876921b2600386b2cbf/Untitled%202.png"><img src="Tips%20(%20ko%20en%20)%20Tesla%20V11%201%204a4e63d3f9a14876921b2600386b2cbf/Untitled%202.png"/></a></figure></div><div id="f9edf844-697f-43e8-b07d-f10d6002382e" style="width:87.5%" class="column"><p id="ca8b78f6-84a9-4309-8629-e146ddc53466" class="">
+<strong>Zoom In/Out</strong>
+This button zooms in or out to the largest screen that can display the mirroring screen.</p></div></div><div id="011b46d5-1a26-46cf-81b3-b2d65d7c63d1" class="column-list"><div id="c56c0d9b-a4a1-4cd4-ae03-abd676f06998" style="width:12.5%" class="column"><figure id="145df929-9d0e-454b-8a91-db995fea4508" class="image"><a href="Tips%20(%20ko%20en%20)%20Tesla%20V11%201%204a4e63d3f9a14876921b2600386b2cbf/Untitled%203.png"><img src="Tips%20(%20ko%20en%20)%20Tesla%20V11%201%204a4e63d3f9a14876921b2600386b2cbf/Untitled%203.png"/></a></figure></div><div id="a793c6ea-788a-43e8-8206-c032b07d58e0" style="width:87.5%" class="column"><p id="1d2eae4d-80e0-4b43-a913-d632c361327e" class="">
+<strong>Home Button (Mirroring Phone)</strong></p><p id="8fb1ed4a-16b5-4b8a-b565-60155a97b323" class="">Press the home button on the mirroring phone.</p></div></div><div id="50b1565b-11f2-4a5e-b022-15ca089c9fd2" class="column-list"><div id="c382a7f7-767e-44c7-82e4-0d7921121030" style="width:12.5%" class="column"><figure id="62ecaaa5-0fb2-4f6d-b851-8aa4b5f845a9" class="image"><a href="Tips%20(%20ko%20en%20)%20Tesla%20V11%201%204a4e63d3f9a14876921b2600386b2cbf/Untitled%204.png"><img src="Tips%20(%20ko%20en%20)%20Tesla%20V11%201%204a4e63d3f9a14876921b2600386b2cbf/Untitled%204.png"/></a></figure></div><div id="a62365c7-9ead-4490-8cd4-22b0d94a06e2" style="width:87.5%" class="column"><p id="1f09b49a-8879-4045-a67b-489add1231b4" class="">
+<strong>Back Button (Mirroring Phone)</strong>
+Press the back button on the mirroring phone.</p></div></div><div id="11ceed12-d4ab-4f31-814a-6258a2926a0b" class="column-list"><div id="3e1a08be-30c2-4ae4-a5b3-c544b7fb4fc7" style="width:12.5%" class="column"><figure id="d7b93db3-ab76-42c3-98fe-470c0a3e3c92" class="image"><a href="Tips%20(%20ko%20en%20)%20Tesla%20V11%201%204a4e63d3f9a14876921b2600386b2cbf/Untitled%205.png"><img style="width:240px" src="Tips%20(%20ko%20en%20)%20Tesla%20V11%201%204a4e63d3f9a14876921b2600386b2cbf/Untitled%205.png"/></a></figure></div><div id="ae486440-131e-4ca8-ba4b-b2dd11073c5c" style="width:87.5%" class="column"><p id="d32af90f-42f9-4285-a457-e1f3b5b5f35c" class="">
+<strong>Movie Theater Mode (During parking only)</strong></p><p id="0afe2098-76ae-4ae9-ab8f-805dde2b406b" class="">Go to a help page where you can move to full screen of various OTTs. You can watch OTT in full screen until you turn it off completely.</p></div></div><h1 id="c1c078a8-2bfb-446d-af6b-febefe6a74e6" class="">0x1. When it doesn&#x27;t work properly</h1><ul id="abdaeaf7-bca7-41df-a4cd-b7f388cf5301" class="bulleted-list"><li style="list-style-type:disc">If the screen is not displayed properly, it is recommended to delete the app and reinstall it.</li></ul><h1 id="c47b6136-4a75-492e-8e10-4daf6ad2b37c" class="">0x2. When screen transmission is slow</h1><ul id="7f6f0c9a-9949-4c95-8064-e95600e7c880" class="bulleted-list"><li style="list-style-type:disc">If the browser side is always on, performance may decrease. Press and hold both buttons to restart the touch screen, which will be very helpful.</li></ul><figure id="a6b7ea0c-9ba9-4210-b90d-d66b3040df05" class="image"><a href="Tips%20(%20ko%20en%20)%20Tesla%20V11%201%204a4e63d3f9a14876921b2600386b2cbf/Untitled%206.png"><img src="Tips%20(%20ko%20en%20)%20Tesla%20V11%201%204a4e63d3f9a14876921b2600386b2cbf/Untitled%206.png"/></a></figure><ul id="cc0963dc-5310-40a0-b272-f7f3bbf09e98" class="bulleted-list"><li style="list-style-type:disc">When Pintot performs mirroring over WiFi, if vehicle data is transmitted to the Tesla side, the speed may be severely slowed down.<ul id="c6319013-f07c-476f-bcba-48ea3eee4795" class="bulleted-list"><li style="list-style-type:circle">This trend is often experienced that it becomes slower when driving than when standing still.</li></ul><blockquote id="5b8822e4-fa11-41df-8d29-57e1aa40a7dc" class="">Although this is not highly recommended, if the mirroring speed continues to be slow even after restarting, please try turning off the vehicle data transmission-related menu at <strong>Software→ Privacy tab at the bottom / Data Sharing</strong> at the bottom of the car menu.</blockquote><p id="41566091-4824-49c2-8400-018884d48dc1" class="">
+</p></li></ul></div></article></body></html>
